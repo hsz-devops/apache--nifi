@@ -43,7 +43,7 @@ RUN groupadd -g ${GID} nifi || groupmod -n nifi `getent group ${GID} | cut -d: -
     && mkdir -p ${NIFI_BASE_DIR} \
     && chown -R nifi:nifi ${NIFI_BASE_DIR} \
     && apt-get update \
-    && apt-get install -y jq xmlstarlet procps
+    && apt-get install -y jq xmlstarlet procps net-tools lsof
 
 USER nifi
 

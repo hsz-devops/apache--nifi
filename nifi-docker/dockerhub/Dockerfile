@@ -44,7 +44,8 @@ RUN groupadd -g ${GID} nifi || groupmod -n nifi `getent group ${GID} | cut -d: -
     && chown -R nifi:nifi ${NIFI_BASE_DIR} \
     && apt-get update \
     && apt-get install -y jq xmlstarlet procps
-
+    && apt-get install -y less ping telnet htop mc
+    
 USER nifi
 
 # Download, validate, and expand Apache NiFi Toolkit binary.
